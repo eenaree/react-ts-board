@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@config/*": ["config/*"],
+      "@models": ["models"],
+      "@models/*": ["models/*"],
+      "@routes": ["routes"],
+      "@routes/*": ["routes/*"],
+      "@typings/*": ["typings/*"]
+    },
+    "outDir": "./build",
+    "allowJs": true,
+    "target": "es6",
+    "moduleResolution": "node",
+    "lib": ["es2020"],
+    "strict": true,
+    "typeRoots": ["typings"]
+  },
+  "include": ["./**/*"]
+}
