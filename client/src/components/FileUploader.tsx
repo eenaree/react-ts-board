@@ -67,7 +67,13 @@ const FileUploader = ({
       const imageArray: React.ReactElement[] = [];
       files.map((file, index) => {
         const imageElement: React.ReactElement = (
-          <>
+          <div
+            css={css`
+              border-top: 1px solid #eee;
+              height: 50px;
+            `}
+            key={index + file.filename}
+          >
             <img
               key={index}
               src={file.url}
@@ -79,7 +85,7 @@ const FileUploader = ({
               `}
             />
             <span>{file.filename}</span>
-          </>
+          </div>
         );
         imageArray.push(imageElement);
       });
@@ -130,19 +136,7 @@ const FileUploader = ({
         />
       </p>
       {previewImages ? (
-        <div>
-          {previewImages.map((image, index) => (
-            <div
-              key={index}
-              css={css`
-                border-top: 1px solid #eee;
-                height: 50px;
-              `}
-            >
-              {image}
-            </div>
-          ))}
-        </div>
+        <div>{previewImages}</div>
       ) : (
         <div>선택한 파일이 없습니다.</div>
       )}
